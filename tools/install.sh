@@ -47,10 +47,6 @@ echo "Installation completed."
 
 POST_INSTALL="$GAME_DIR/post-install.sh"
 
-echo "GAME_DIR=$GAME_DIR"
-echo "POST_INSTALL=$POST_INSTALL"
-ls -la "$GAME_DIR"
-
 if [[ -x "$POST_INSTALL" ]]; then
     echo
     echo "Running post-install script..."
