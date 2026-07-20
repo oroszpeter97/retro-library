@@ -22,6 +22,7 @@ export MOUNT_POINT
 
 main_menu() {
     while true; do
+        clear
         choice=$(gum choose \
         "Launch Game" \
         "Install Game" \
@@ -33,7 +34,7 @@ main_menu() {
             "Launch Game") launch_menu ;;
             "Install Game") install_menu ;;
             "Setup OS") setup_os_menu ;;
-            "Configure") echo "Configure" ;;
+            "Configure") config_menu ;;
             "Exit") exit 0 ;;
         esac
     done
@@ -41,6 +42,7 @@ main_menu() {
 
 launch_menu() {
     while true; do
+        clear
         choice=$(gum choose \
         "Spore" \
         "Need for Speed - Most Wanted" \
@@ -56,6 +58,7 @@ launch_menu() {
 
 install_menu() {
     while true; do
+        clear
         choice=$(gum choose \
         "Spore" \
         "Need for Speed Carbon" \
@@ -71,12 +74,25 @@ install_menu() {
 
 setup_os_menu() {
     while true; do
+        clear
         choice=$(gum choose \
         "Windows XP" \
         "Back")
 
         case "$choice" in
             "Windows XP") ./setup/setup-xp-prefix.sh ;;
+            "Back") return ;;
+        esac
+    done
+}
+
+config_menu() {
+    while true; do
+        clear
+        choice=$(gum choose \
+        "Back")
+
+        case "$choice" in
             "Back") return ;;
         esac
     done
