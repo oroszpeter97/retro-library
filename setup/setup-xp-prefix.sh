@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 PREFIX="$HOME/.wine-xp"
-PKGFILE="$(dirname "$0")/packages"
+PKGFILE="$(dirname "$0")/packages-winxp"
 log(){ echo "[XP-SETUP] $1"; }
 log "Synchronizing package databases..."
 sudo pacman -Sy --needed --noconfirm $(grep -v '^#' "$PKGFILE"|xargs)
-log "Creating 64-bit Wine prefix at $PREFIX"
+log "Creating 32-bit Wine prefix at $PREFIX"
 export WINEPREFIX="$PREFIX"
-export WINEARCH=wow64
 rm -rf "$PREFIX"
 wineboot -u
 log "Configuring Windows XP mode"

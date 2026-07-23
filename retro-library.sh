@@ -45,12 +45,10 @@ launch_menu() {
         clear
         choice=$(gum choose \
         "Spore" \
-        "Need for Speed - Most Wanted" \
         "Back")
 
         case "$choice" in
             "Spore") ./tools/launch.sh games/spore ;;
-            "Need for Speed - Most Wanted") ./tools/launch.sh games/nfs-most-wanted ;;
             "Back") return ;;
         esac
     done
@@ -61,12 +59,10 @@ install_menu() {
         clear
         choice=$(gum choose \
         "Spore" \
-        "Need for Speed Carbon" \
         "Back")
 
         case "$choice" in
             "Spore") ./tools/install.sh games/spore ;;
-            "Need for Speed Carbon") ./tools/install.sh games/nfs-carbon ;;
             "Back") return ;;
         esac
     done
@@ -77,10 +73,12 @@ setup_os_menu() {
         clear
         choice=$(gum choose \
         "Windows XP" \
+        "Windows GoG" \
         "Back")
 
         case "$choice" in
             "Windows XP") ./setup/setup-xp-prefix.sh ;;
+            "Windows GoG") ./setup/setup-gog-prefix.sh ;;
             "Back") return ;;
         esac
     done
