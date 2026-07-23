@@ -22,7 +22,6 @@ export MOUNT_POINT
 
 main_menu() {
     while true; do
-        clear
         choice=$(gum choose \
         "Launch Game" \
         "Install Game" \
@@ -42,13 +41,14 @@ main_menu() {
 
 launch_menu() {
     while true; do
-        clear
         choice=$(gum choose \
         "Spore" \
+        "Heroes 3" \
         "Back")
 
         case "$choice" in
             "Spore") ./tools/launch.sh games/spore ;;
+            "Heroes 3") ./tools/launch.sh games/heroes-3 ;;
             "Back") return ;;
         esac
     done
@@ -56,13 +56,14 @@ launch_menu() {
 
 install_menu() {
     while true; do
-        clear
         choice=$(gum choose \
         "Spore" \
+        "Heroes 3" \
         "Back")
 
         case "$choice" in
             "Spore") ./tools/install.sh games/spore ;;
+            "Heroes 3") ./tools/install.sh games/heroes-3 ;;
             "Back") return ;;
         esac
     done
@@ -70,7 +71,6 @@ install_menu() {
 
 setup_os_menu() {
     while true; do
-        clear
         choice=$(gum choose \
         "Windows XP" \
         "Windows GoG" \
@@ -86,7 +86,6 @@ setup_os_menu() {
 
 config_menu() {
     while true; do
-        clear
         choice=$(gum choose \
         "Back")
 
